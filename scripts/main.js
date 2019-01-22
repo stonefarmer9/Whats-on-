@@ -14,7 +14,9 @@ x.style.display = "none";
 function postEvent() {
   var name = document.getElementById("eventnamepost").value
   var date = document.getElementById("datepost").value
-  whatsOn.addEvent(name, date)
+  var time = document.getElementById("timepost").value
+
+  whatsOn.addEvent(name, date, time)
 }
 
 SubmitEvent.onclick = function() {
@@ -26,13 +28,18 @@ SubmitEvent.onclick = function() {
 
 function listEvents() {
   var str = '<ul style="list-style-type:none">'
-
   whatsOn.list.forEach(function(event) {
-    str += '<li>' + event.name + " " + event.date + '</li>';
+
+    str += '<li>' + event.name + " " + `${timeStamp(event.date)} ` + event.time + '</li>';
   });
-
   str += '</ul>';
-
   document.getElementById("eventList").innerHTML = str;
+}
 
+function timeStamp (currentDate) {
+  var day = currentDate.getDate();
+  var month = currentDate.getMonth();
+  var year = currentDate.getFullYear();
+  var dateString = `${day}:${month + 1}:${year}`;
+  return dateString
 }
