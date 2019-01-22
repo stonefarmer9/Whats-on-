@@ -20,5 +20,19 @@ function postEvent() {
 SubmitEvent.onclick = function() {
   postEvent()
   openInput()
+  listEvents()
   console.log(whatsOn.list)
 };
+
+function listEvents() {
+  var str = '<ul style="list-style-type:none">'
+
+  whatsOn.list.forEach(function(event) {
+    str += '<li>' + event.name + " " + event.date + '</li>';
+  });
+
+  str += '</ul>';
+
+  document.getElementById("eventList").innerHTML = str;
+
+}

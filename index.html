@@ -9,13 +9,15 @@
   </center>
   <body>
   <button onclick="openInput()">Post Event</button>
-  <div id="PostEvent" style="display:none">
+  <div id="PostEvent" align="left" style="display:none">
     <form>
       <input type="text" id="eventnamepost" name="Event Name">
       <input type="date" id="datepost" min="2019-01-22" max="2020-01-22">
       <button type ="button" id = "SubmitEvent" name="Submit Event">Submit</button>
       </form>
       </div>
+  <div id="eventList" align="right">
+  </div>
       <script src="scripts/event.js"></script>
       <script src="scripts/eventList.js"></script>
       <script src="scripts/main.js"></script>
