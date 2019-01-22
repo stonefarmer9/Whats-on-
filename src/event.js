@@ -1,11 +1,5 @@
-class EventList {
-  constructor(name) {
+class Event {
+  constructor(name){
     this.name = name
-    this.list = []
   }
-
-  addEvent(name) {
-    this.list.unshift(name)
-  }
-
 }
