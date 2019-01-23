@@ -5,11 +5,13 @@ spec('Events are stored with a name', function(){
 
 
 spec('Events are stored with a date', function(){
-  massacre = new Event('Istvaan III', '12/02/2018')
-  expectEquality(massacre.date, '12/02/2018')
+  massacre = new Event('Istvaan III', '12/02/2019', '15:30')
+  date = new Date('12/02/2019')
+  console.log(massacre, date)
+  expectEquality(massacre.date.getTime(), date.getTime())
 })
 
 spec('Events are stored with a time', function(){
-  massacre = new Event('Istvaan III', '12/02/2018', '15:30')
+  massacre = new Event('Istvaan III', '12/02/2019', '15:30')
   expectEquality(massacre.time, '15:30')
 })

@@ -22,6 +22,7 @@ function postEvent() {
 SubmitEvent.onclick = function() {
   postEvent()
   openInput()
+  whatsOn.eventOrder()
   listEvents()
   console.log(whatsOn.list)
 };
