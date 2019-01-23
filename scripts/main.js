@@ -13,10 +13,10 @@ x.style.display = "none";
 
 function postEvent() {
   var name = document.getElementById("eventnamepost").value
+  var city = document.getElementById("eventcitypost").value
   var date = document.getElementById("datepost").value
   var time = document.getElementById("timepost").value
-
-  whatsOn.addEvent(name, date, time)
+  whatsOn.addEvent(name, city, date, time)
 }
 
 SubmitEvent.onclick = function() {
@@ -34,7 +34,7 @@ function listEvents() {
     if  (event.datetime < currentDate) {
       delete event
     } else {
-    str += '<li>' + event.name + " " + `${timeStamp(event.date)} ` + event.time + '</li>';
+    str += '<li>' + event.name + " " + `${timeStamp(event.date)} ` + event.time + " " + event.city + '</li>';
   }});
   str += '</ul>';
   document.getElementById("eventList").innerHTML = str;

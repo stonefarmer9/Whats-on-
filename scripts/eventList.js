@@ -4,8 +4,8 @@ class EventList {
     this.list = new Array
   }
 
-  addEvent(name, date, time) {
-    event = new Event(name, date, time)
+  addEvent(name, city, date, time) {
+    event = new Event(name, city, date, time)
     this.list.unshift(event)
   }
 
