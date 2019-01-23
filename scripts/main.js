@@ -28,14 +28,18 @@ SubmitEvent.onclick = function() {
 };
 
 function listEvents() {
+  currentDate = new Date().getTime();
   var str = '<ul style="list-style-type:none">'
   whatsOn.list.forEach(function(event) {
-
+    if  (event.datetime < currentDate) {
+      delete event
+    } else {
     str += '<li>' + event.name + " " + `${timeStamp(event.date)} ` + event.time + '</li>';
-  });
+  }});
   str += '</ul>';
   document.getElementById("eventList").innerHTML = str;
 }
+
 
 function timeStamp (currentDate) {
   var day = currentDate.getDate();
