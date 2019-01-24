@@ -12,8 +12,7 @@
   <div id="PostEvent" align="left" style="display:none">
     <form>
       <input type="text" id="eventnamepost" name="Event Name">
-      <input type="date" id="datepost" min="2019-01-22" max="2020-01-22">
-      <input type="time" id="timepost">
+      <input type="datetime-local" id="datepost" min="2019-01-22" max="2020-01-22">
       <select name="cars" id="eventcitypost">
   <option value="Bristol">Bristol</option>
   <option value="Cardiff">Cardiff</option>
@@ -32,13 +31,13 @@
   <div id="eventList" align="right">
 
   </div>
-
+</body>
   <div>
     <body>
       <div class="container">
         <header class="header">
           <div class ="search">
-            <input type="text" placeholder="Enter city name" id="search-txt">
+            <input type="text" placeholder="Enter city name to see the weather" id="search-txt">
             <a id="search-btn" href="#"><i class="fas fa-search"></i></a>
             </div>
             </header>
@@ -59,9 +58,10 @@
             <div id="humidity-div"></div>
             </div>
       </div>
-  </div>
+</div>
+
       <script src="scripts/event.js"></script>
       <script src="scripts/eventList.js"></script>
-      <script src="weather/weather.js"></script>
+      <script src="scripts/weather/weather.js"></script>
       <script src="scripts/main.js"></script>
   </body>

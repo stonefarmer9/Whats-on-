@@ -95,6 +95,7 @@ body{
 #search-txt {
   color: red;
   height:30px;
+  width:220px;
   border-radius: 10px;
   border-style:none;
   outline:none;

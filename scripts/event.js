@@ -1,9 +1,8 @@
 class Event {
-  constructor(name, city, date, time){
+  constructor(name, city, date){
     this.name = name
     this.city = city
     this.date = new Date(date)
-    this.time = time
     this.datetime = this.date.getTime();
   }
 

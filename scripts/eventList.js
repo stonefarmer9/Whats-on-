@@ -1,11 +1,11 @@
 class EventList {
-  constructor(name) {
+  constructor(name, list = []) {
     this.name = name
-    this.list = new Array
+    this.list = list
   }
-
-  addEvent(name, city, date, time) {
-    event = new Event(name, city, date, time)
+//possibly give default value of empty array on instantiation
+  addEvent(name, city, date) {
+    event = new Event(name, city, date)
     this.list.unshift(event)
   }
 
