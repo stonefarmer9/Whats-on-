@@ -5,39 +5,22 @@ let eventList =
   JSON.parse(localStorage.getItem('events')) :
   new EventList("events");
 
+datatype = eventList instanceof EventList;
+
 localStorage.setItem('events', JSON.stringify(eventList));
-console.dir(eventList, '1 - eventList')
+
 const data = JSON.parse(localStorage.getItem('events'));
 
 var whatsOn = new EventList("events");
 
-data.forEach(function(object){
-  console.log(object)
+if (datatype === false) {
+eventList.forEach(function(object){
   var event = new Event(object.name, object.city, object.date, object.datetime)
   whatsOn.list.unshift(event)
-});
+})};
 
 whatsOn.eventOrder()
 listEvents()
-
-console.log("whatsOn", whatsOn)
-console.log(data, '2 - data')
-console.dir(data)
-// this is causing problems - instatiating
-// a new class and copying the details doesn't seem to work.
-// localstorage persists, after page refresh, then when a new event is added.
-// the localstorage gets wiped.
-// may need a CLASS/STATIC method in EventList to parse the JSON string and convert it to the eventList object.
-// RESEARCH - STATIC PARSING METHOD -- STATIC METHODS: MDN, W3S,
-// -- CONVERT JSON OBJECT TO ORIGINAL OBJECT
-// -- JSON.Parse() idiosynchrocies
-
-
-// current theory is that the objects JSON is returning are note EventList objects,
-// as per console.logs, and as such cannot use the methods defined there
-// test if what returns is an instance of eventList
-// how to convert a JSON objects to the original stored object
-// inflating, deflating, serialising,
 
 function openInput() {
   var x = document.getElementById("PostEvent");
